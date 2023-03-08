@@ -1,87 +1,91 @@
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(252, 133, 35);
-    letter-spacing: 1px;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(252, 133, 35);
+  letter-spacing: 1px;
 }
 
-h1{
-    font-size: 40px;
+h1 {
+  font-size: 40px;
 }
 
-#topBar{
-    background-color: rgb(215, 172, 250);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 16px;
+#topBar {
+  background-color: rgb(215, 172, 250);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 16px;
 }
 
-#topText{
-    font-size: 12px;
-    margin-top: -2px;
+#topText {
+  font-size: 12px;
+  margin-top: -2px;
 }
 
-.centered{
-    margin-top: 40%;
+.centered {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-.contenedor{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    margin-top: 25vh;
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-top: 25vh;
 }
 
-form{
-    display: flex;
-    flex-direction: row;
-    gap: 1px;
+form {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
 }
 
-#cantidad{
-    width: 50px;
-    font-size: larger;
+#cantidad {
+  width: 50px;
+  font-size: larger;
 }
 
-#producto{
-    width: 250px;
-    font-size: larger;
+#producto {
+  width: 250px;
+  font-size: larger;
 }
 
-input{
-    background-color: transparent;
-    border: none;
+input {
+  background-color: transparent;
+  border: none;
 }
-input:focus{
-    background-color: transparent;
-    outline: none;
+input:focus {
+  background-color: transparent;
+  outline: none;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
-::placeholder{
-    color: rgb(100,100,100);
+::placeholder {
+  color: rgb(100, 100, 100);
 }
 
-button{
-    background-color:transparent;
-    outline: none;
-    border: none;
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
 }
 
-tr{
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
+tr {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
 }
 
 input::-webkit-outer-spin-button,
