@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 42px;
 }
 
 #topBar {
@@ -41,6 +41,7 @@ h1 {
 }
 
 form {
+  /* background-color: green; */
   display: flex;
   flex-direction: row;
   gap: 1px;
@@ -93,3 +94,29 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+#capacidadSuperada {
+  visibility: hidden;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#carrito{
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* #trashButton{
+  margin-left: 110px;
+}
+
+#trashIcon{
+  right: 0px;
+  transform: scale(1.2);
+} */

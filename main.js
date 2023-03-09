@@ -33,7 +33,7 @@ function agregarAlCarrito() {
       celdaProducto.textContent = document.getElementById("producto").value;
       celdaCantidad.textContent = document.getElementById("cantidad").value;
       celdaEliminar.innerHTML =
-        '<button type="button" onclick="eliminarDelCarrito(this)"><i class="fa-solid fa-trash"></i></button>';
+        '<button id="trashButton" type="button" onclick="eliminarDelCarrito(this)"><i id="trashIcon" class="fa-solid fa-trash"></i></button>';
       resetearFormulario();
     }
   } else if (cantidad == 0 || cantidad == undefined) {
@@ -51,6 +51,7 @@ resetearFormulario();
 document.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     agregarAlCarrito();
+    actualizarTotalProductos();
   }
 });
 
@@ -58,12 +59,6 @@ function eliminarDelCarrito(fila) {
   let indiceFila = fila.parentNode.parentNode.rowIndex;
   document.getElementById("carrito").deleteRow(indiceFila);
   resetearFormulario();
-  actualizarTotalProductos();
-}
-
-function vaciarCarrito() {
-  let carrito = document.getElementById("carrito").getElementsByTagName("tbody")[0];
-  carrito.innerHTML = "";
   actualizarTotalProductos();
 }
 
@@ -75,6 +70,9 @@ function actualizarTotalProductos() {
     }
     if(total >= 1){
       document.getElementById("totalProductos").innerHTML = "Cant. de productos: " + total;
+      if(total >= 20){
+        document.getElementById('capacidadSuperada').style.visibility = 'visible';
+      }
     }
     else{
       document.getElementById("totalProductos").innerHTML = "El carrito esta vacio"
