@@ -23,8 +23,6 @@ function agregarAlCarrito() {
       let celdaCantidad = fila.insertCell(0);
       let celdaProducto = fila.insertCell(1);
       let celdaEliminar = fila.insertCell(2);
-      // celdaProducto.innerHTML = producto;
-      // celdaCantidad.innerHTML = cantidad;
       celdaProducto.textContent = document.getElementById("producto").value;
       celdaCantidad.textContent = document.getElementById("cantidad").value;
       celdaEliminar.innerHTML =
