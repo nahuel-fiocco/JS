@@ -8,7 +8,7 @@ const resetearFormulario = () => {
   document.getElementById("cantidad").focus();
 }
 
-function agregarAlCarrito() {
+const agregarAlCarrito = () => {
   let cantidad = document.getElementById("cantidad").value;
   if (cantidad > 0) {
     let producto = document.getElementById("producto").value.toUpperCase();
@@ -62,7 +62,7 @@ function eliminarDelCarrito(fila) {
   actualizarTotalProductos();
 }
 
-function actualizarTotalProductos() {
+const actualizarTotalProductos = () => {
     let total = 0;
     let filas = document.getElementById("carrito").getElementsByTagName("tbody")[0].rows;
     for (let i = 0; i < filas.length; i++) {
