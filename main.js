@@ -1,6 +1,28 @@
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("cantidad").focus();
-});
+// DEFINICION DE FUNCIONES
+
+const eliminarDelCarrito = (fila) => {
+  let indiceFila = fila.parentNode.parentNode.rowIndex;
+  document.getElementById("carrito").deleteRow(indiceFila);
+  resetearFormulario();
+  actualizarTotalProductos();
+}
+
+const actualizarTotalProductos = () => {
+    let total = 0;
+    let filas = document.getElementById("carrito").getElementsByTagName("tbody")[0].rows;
+    for (let i = 0; i < filas.length; i++) {
+    total += parseInt(filas[i].cells[0].innerHTML);
+    }
+    if(total >= 1){
+      document.getElementById("totalProductos").innerHTML = "Cant. de productos: " + total;
+      if(total >= 20){
+        document.getElementById('capacidadSuperada').style.visibility = 'visible';
+      }
+    }
+    else{
+      document.getElementById("totalProductos").innerHTML = "El carrito esta vacio"
+    }
+  }
 
 const resetearFormulario = () => {
   document.getElementById("cantidad").value = null;
@@ -46,8 +68,12 @@ const agregarAlCarrito = () => {
   actualizarTotalProductos();
 }
 
-resetearFormulario();
+// CODIGO POSTA
 
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("cantidad").focus();
+});
+resetearFormulario();
 document.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     agregarAlCarrito();
@@ -55,26 +81,3 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-function eliminarDelCarrito(fila) {
-  let indiceFila = fila.parentNode.parentNode.rowIndex;
-  document.getElementById("carrito").deleteRow(indiceFila);
-  resetearFormulario();
-  actualizarTotalProductos();
-}
-
-const actualizarTotalProductos = () => {
-    let total = 0;
-    let filas = document.getElementById("carrito").getElementsByTagName("tbody")[0].rows;
-    for (let i = 0; i < filas.length; i++) {
-    total += parseInt(filas[i].cells[0].innerHTML);
-    }
-    if(total >= 1){
-      document.getElementById("totalProductos").innerHTML = "Cant. de productos: " + total;
-      if(total >= 20){
-        document.getElementById('capacidadSuperada').style.visibility = 'visible';
-      }
-    }
-    else{
-      document.getElementById("totalProductos").innerHTML = "El carrito esta vacio"
-    }
-  }
