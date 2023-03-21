@@ -1,5 +1,17 @@
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("textLocation").focus();
+});
+
 const button = document.getElementById("getTemperature");
 button.addEventListener("click", getTemperature);
+
+const enter = document.getElementById("textLocation")
+enter.addEventListener('keypress', function(event){
+  if(event.key === 'Enter'){
+    event.preventDefault();
+    document.getElementById('getTemperature').click();
+  }
+})
 
 function getTemperature() {
   const location = document.getElementById("textLocation").value.toUpperCase();
