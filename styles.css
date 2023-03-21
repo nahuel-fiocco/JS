@@ -1,113 +1,13 @@
-body {
+*{
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(252, 133, 35);
-  letter-spacing: 1px;
-}
-
-h1 {
-  font-size: 42px;
-}
-
-#topBar {
-  background-color: rgb(215, 172, 250);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 16px;
-}
-
-#topText {
-  font-size: 12px;
-  margin-top: -2px;
-}
-
-.centered {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.contenedor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 50px;
-  margin-top: 25vh;
-}
-
-form {
-  /* background-color: green; */
-  display: flex;
-  flex-direction: row;
-  gap: 1px;
-}
-
-#cantidad {
-  width: 50px;
-  font-size: larger;
-}
-
-#producto {
-  width: 250px;
-  font-size: larger;
-}
-
-input {
-  background-color: transparent;
-  border: none;
-}
-input:focus {
-  background-color: transparent;
-  outline: none;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-::placeholder {
-  color: rgb(100, 100, 100);
-}
-
-button {
-  background-color: transparent;
-  outline: none;
-  border: none;
-}
-
-tr {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-#capacidadSuperada {
-  visibility: hidden;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#carrito{
-  /* background-color: red; */
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 18px;
+  height: 95vh;
 }
