@@ -9,14 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const button = document.getElementById("getTemperature");
 button.addEventListener("click", getTemperature);
-
 const enter = document.getElementById("textLocation");
 enter.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     document.getElementById("getTemperature").click();
   }
 });
-
 const limpiarButton = document.getElementById("limpiar");
 limpiarButton.addEventListener("click", limpiar);
 
@@ -34,22 +32,18 @@ function getTemperature() {
         const temperature = data.main.temp;
         const temperatureElement = document.getElementById("temperature");
         temperatureElement.textContent = `${location}: ${temperature} °C`;
-
-        // Guardar los datos en el localStorage
         const dataObj = { location, temperature };
         localStorage.setItem('weatherData', JSON.stringify(dataObj));
       })
       .catch(() => {
-        document.getElementById('temperature').textContent = "Ubicaion invalida";
+        document.getElementById('temperature').textContent = "invalid location";
         localStorage.removeItem('weatherData');
       });
     }
 }
 
 function limpiar() {
-  // Borrar el valor almacenado en Local Storage
   localStorage.removeItem("weatherData");
-  // Borrar el contenido de la etiqueta donde se muestran los resultados
   document.getElementById("temperature").textContent = "";
   document.getElementById("textLocation").value = "";
 }
