@@ -10,61 +10,62 @@ body {
   align-items: center;
   justify-content: center;
   height: 95vh;
-}
-
-body {
-  background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
+  gap: 5vh;
 }
 
 h1 {
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  font-size: 30px;
 }
 
-.contenedorInput {
+.contenedorGeneral{
   display: flex;
-  justify-content: center;
-  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vh;
 }
 
 #textLocation {
-  width: 300px;
-  padding: 10px;
+  width: auto;
+  padding: 8px;
   font-size: 16px;
   border-radius: 10px;
   border: 2px solid #ccc;
-  margin-right: 10px;
 }
 
 #textLocation:focus {
   outline: none;
-  border: 2px solid #6b9dbf;
+  border: 2px solid #489dd6;
 }
 
-#getTemperature {
+#getTemperature, #limpiar {
   background-color: #6b9dbf;
   color: white;
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-#getTemperature:hover {
+#getTemperature:hover, #limpiar:hover {
   background-color: #4a7a8c;
 }
 
 .contenedorTemperatura {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
   font-size: 20px;
 }
 
 #temperature {
   font-weight: bold;
+  font-size: 18px;
+}
+
+#contenedorBotones{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10vh;
 }

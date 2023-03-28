@@ -23,17 +23,18 @@
   </head>
   <body>
     <h1>Temperature by location</h1>
-    <div class="contenedorInput">
-      <input
-        type="text"
-        id="textLocation"
-        placeholder="enter your location..."
-      />
-      <button id="getTemperature">Consultar</button>
+    <div class="contenedorGeneral">
+      <input type="text" id="textLocation" placeholder="enter your location..."/>
+      <div id="contenedorBotones">
+        <button id="limpiar">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+        <button id="getTemperature">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>      
+      </div>
     </div>
-    <div class="contenedorTemperatura">
-      <p id="temperature"></p>
-    </div>
+    <p id="temperature"></p>
     <script src="main.js"></script>
   </body>
 </html>
