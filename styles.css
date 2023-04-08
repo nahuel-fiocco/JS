@@ -5,6 +5,8 @@
 }
 
 body {
+  -webkit-transition: 200ms;
+  transition: 200ms;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,18 +16,20 @@ body {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 26px;
+  word-wrap: break-word;
 }
 
-.contenedorGeneral{
+.contenedorGeneral {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4vh;
+  width: auto;
 }
 
 #textLocation {
-  width: auto;
+  width: 50%;
   padding: 8px;
   font-size: 16px;
   border-radius: 10px;
@@ -37,7 +41,8 @@ h1 {
   border: 2px solid #489dd6;
 }
 
-#getTemperature, #limpiar {
+#getTemperature,
+#limpiar {
   background-color: #6b9dbf;
   color: white;
   border: none;
@@ -48,24 +53,105 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
-#getTemperature:hover, #limpiar:hover {
+#getTemperature:hover,
+#limpiar:hover {
   background-color: #4a7a8c;
 }
 
-.contenedorTemperatura {
-  display: flex;
-  justify-content: center;
-  font-size: 20px;
-}
-
-#temperature {
+.apiResponse {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 }
 
-#contenedorBotones{
+#contenedorBotones {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10vh;
+}
+
+.contenedorClima{
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hidden{
+  display: none;
+}
+
+/* Creando el Dark Mode */
+
+.dark-mode {
+  background-color: rgb(41, 41, 41);
+  color: white;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.switch {
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 20px;
+  position: fixed;
+  z-index: 3;
+  right: 30px;
+  bottom: 30px;
+  width: 60px;
+  height: 34px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+}
+.switch::after {
+  content: "";
+  display: block;
+  width: 29px;
+  height: 29px;
+  position: absolute;
+  background: white;
+  top: 2px;
+  left: 2px;
+  right: unset;
+  border-radius: 20px;
+  border: 1px solid #ababab;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.switch.active {
+  background-color: #4bd763;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.switch.active::after {
+  -webkit-transform: translate(26px, 0);
+  transform: translate(26px, 0);
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+.switch span {
+  color: black;
+  background: none;
+  -webkit-transition: 200ms;
+  transition: 200ms;
 }
