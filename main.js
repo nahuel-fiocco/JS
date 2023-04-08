@@ -1,14 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector(".contenedorClima").classList.add("hidden");
-  document.getElementById("textLocation").focus();
+  const contenedorClima = document.querySelector(".contenedorClima");
+  const temperatureElement = document.getElementById("temperature");
+  const feelsLikeElement = document.getElementById("feelsLike");
+  const humidityElement = document.getElementById("humidity");
+  const windElement = document.getElementById("wind");
+  const textLocationElement = document.getElementById("textLocation");
+  const temperatureUnitElement = document.querySelector(".temperatureUnit");
+  const feelsLikeUnitElement = document.querySelector(".feelsLikeUnit");
+  const humidityUnitElement = document.querySelector(".humidityUnit");
+  const windUnitElement = document.querySelector(".windUnit");
+
+  contenedorClima.classList.add("hidden");
+  textLocationElement.focus();
   const weatherData = JSON.parse(localStorage.getItem("weatherData"));
   if (weatherData) {
-    document.querySelector(".contenedorClima").classList.remove("hidden");
-    document.getElementById("temperature").textContent = `${weatherData.temperature}`;
-    document.getElementById("feelsLike").textContent = `${weatherData.feelsLike}`;
-    document.getElementById("humidity").textContent = `${weatherData.humidity}`;
-    document.getElementById("wind").textContent = `${weatherData.wind}`;
-    document.getElementById("textLocation").value = `${weatherData.location}`;
+    contenedorClima.classList.remove("hidden");
+    temperatureElement.textContent = `${weatherData.temperature}`;
+    feelsLikeElement.textContent = `${weatherData.feelsLike}`;
+    humidityElement.textContent = `${weatherData.humidity}`;
+    windElement.textContent = `${weatherData.wind}`;
+    textLocationElement.value = `${weatherData.location}`;
+    temperatureUnitElement.textContent = "°C";
+    feelsLikeUnitElement.textContent = "°C";
+    humidityUnitElement.textContent = "%";
+    windUnitElement.textContent = "km/h";
   }
 });
 
@@ -33,27 +48,26 @@ function getTemperature() {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        document.querySelector(".contenedorClima").classList.remove("hidden");
-        let temperature = data.main.temp;
-        temperature = temperature.toFixed(1);
-        document.getElementById("temperature").textContent = `${temperature}`;
-
-        let feelsLike = data.main.feels_like;
-        feelsLike = feelsLike.toFixed(1);
-        document.getElementById("feelsLike").textContent = `${feelsLike}`;
-
+        const contenedorClima = document.querySelector(".contenedorClima");
+        const temperature = data.main.temp.toFixed(1);
+        const feelsLike = data.main.feels_like.toFixed(1);
         const humidity = data.main.humidity;
-        document.getElementById("humidity").textContent = `${humidity}`;
+        const wind = (data.wind.speed * 3.6).toFixed(1);
 
-        let wind = data.wind.speed
-        wind = (wind*3.6);
-        wind = wind.toFixed(1);
+        contenedorClima.classList.remove("hidden");
+        document.getElementById("temperature").textContent = `${temperature}`;
+        document.getElementById("feelsLike").textContent = `${feelsLike}`;
+        document.getElementById("humidity").textContent = `${humidity}`;
         document.getElementById("wind").textContent = `${wind}`;
+        document.querySelector(".temperatureUnit").textContent = "°C";
+        document.querySelector(".feelsLikeUnit").textContent = "°C";
+        document.querySelector(".humidityUnit").textContent = "%";
+        document.querySelector(".windUnit").textContent = "km/h";
 
         const dataObj = { location, temperature, feelsLike, humidity, wind };
         localStorage.setItem("weatherData", JSON.stringify(dataObj));
       })
-      .catch(() => { // en caso de error
+      .catch(() => {
         localStorage.removeItem("weatherData");
       });
   }
@@ -75,7 +89,7 @@ function saveToLocalStorage(location, temperature, feelsLike, humidity, wind) {
     temperature: temperature,
     feelsLike: feelsLike,
     humidity: humidity,
-    wind: wind
+    wind: wind,
   };
   localStorage.setItem("weatherData", JSON.stringify(data));
 }

@@ -70,19 +70,34 @@ h1 {
   gap: 10vh;
 }
 
-.contenedorClima{
-  width: 40%;
+.contenedorClima {
+  width: auto;
+  height: auto;
   display: flex;
   justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
 }
 
-.right{
+.right {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.value {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.hidden{
+.unit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hidden {
   display: none;
 }
 
