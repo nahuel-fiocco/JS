@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("feelsLike").textContent = `${weatherData.feelsLike}`;
     document.getElementById("humidity").textContent = `${weatherData.humidity}`;
     document.getElementById("wind").textContent = `${weatherData.wind}`;
+    document.getElementById("textLocation").value = `${weatherData.location}`;
   }
 });
 
@@ -52,8 +53,7 @@ function getTemperature() {
         const dataObj = { location, temperature, feelsLike, humidity, wind };
         localStorage.setItem("weatherData", JSON.stringify(dataObj));
       })
-      .catch(() => {
-        // en caso de error
+      .catch(() => { // en caso de error
         localStorage.removeItem("weatherData");
       });
   }
