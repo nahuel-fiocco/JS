@@ -101,6 +101,20 @@ h1 {
   display: none;
 }
 
+footer{
+  position: fixed;
+  bottom: 10px;
+  font-size: 12px;
+}
+
+a{
+  color: black;
+}
+
+.dark-mode a{
+  color: white;
+}
+
 /* Creando el Dark Mode */
 
 .dark-mode {
