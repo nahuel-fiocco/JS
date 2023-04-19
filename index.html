@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Temperatura</title>
+    <title>Weather</title>
     <link
       rel="icon"
       href="https://cdn-icons-png.flaticon.com/512/1163/1163763.png"
@@ -27,8 +27,8 @@
       <span><i class="fa-solid fa-moon"></i></span>
     </button>
     <div class="contenedorGeneral">
-      <h1>What's the weather like today</h1>
-      <input type="text" id="textLocation" placeholder="enter location..." />
+      <h1>What's the weather in...</h1>
+      <input type="text" id="textLocation" placeholder="location..." />
       <div id="contenedorBotones">
         <button id="limpiar">
           <span><i class="fa-solid fa-trash"></i></span>
@@ -38,26 +38,15 @@
         </button>
       </div>
     </div>
-    <div class="contenedorClima">
-      <div class="left">
-        <p class="apiResponse">Temperature:</p>
-        <p class="apiResponse">Feels like:</p>
-        <p class="apiResponse">Humidity:</p>
-        <p class="apiResponse">Wind:</p>
+    <div class="contenedorClima hidden">
+      <div class="primero">
+        <h3 id="location"></h3>
+        <h3 id="temperature"></h3>
       </div>
-      <div class="right">
-        <div class="value">
-          <p class="apiResponse" id="temperature"></p>
-          <p class="apiResponse" id="feelsLike"></p>
-          <p class="apiResponse" id="humidity"></p>
-          <p class="apiResponse" id="wind"></p>
-        </div>
-        <div class="unit">
-          <p class="apiResponse temperatureUnit"></p>
-          <p class="apiResponse feelsLikeUnit"></p>
-          <p class="apiResponse humidityUnit"></p>
-          <p class="apiResponse windUnit"></p>
-        </div>
+      <div class="segundo">
+        <p id="feelsLike"></p>
+        <p id="humidity"></p>
+        <p id="wind"></p>
       </div>
     </div>
     <footer>
